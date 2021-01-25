@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>12344</p>
+    <script>
+        var str='{"name":"xuejiao","age":18}'
+        // var strobj = eval("("+str+")");
+        var strobj = JSON.parse(str)
+        alert(typeof(strobj))
+
+        //为什么不建议使用eval  因为不安全会把script里的src也转换
+    </script>
+</body>
+</html>

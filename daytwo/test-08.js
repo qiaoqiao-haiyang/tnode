@@ -36,10 +36,25 @@ console.log(buf3);
 
 // const buf=Buffer.from('hello world','ascii');
 // const buf2=Buffer.from('hello world','ascii');
-var str = process.argv[2];
-const buf=Buffer.from(str,'ascii')
-console.log(buf.toString('base64'));
+// var str = process.argv[2];
+// const buf=Buffer.from(str,'ascii')
+// console.log(buf.toString('base64'));
 
 // http://www.163.com/1.rmvb
 //aHR0cDovL3d3dy4xNjMuY29tLzEucm12Yg==
+
+//png文件转换成base64
+var fs = require("fs")
+var util = require("util")
+
+var fileUrl = __dirname+'/'+'1.jpg'
+var imageData= await util.promisify(fs,readFileSync(fileUrl))
+var imageBase64=imageData.toString("base64")
+var imageBase64="data:image/png;base64";
+console.log(imageBase64+imageBase64);
+
+
+
+
+var str="may I help you"
 

@@ -5,6 +5,7 @@
 
 var fs=require("fs")
 var path = require("path")
+const { gzip } = require("zlib")
 
 var readDir=(entry)=>{
     var dirInfo=fs.readdirSync(entry)
@@ -21,3 +22,6 @@ var readDir=(entry)=>{
 }
 
 readDir(__dirname)
+
+
+// gzip()//压缩

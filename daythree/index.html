@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<!-- 只有代码写到数据包里，才会统一打到数据包里 -->
+<!-- <link rel="stylesheet" href="/static/style.css"> -->
+<!-- 读到link标签的href浏览器要单独发起线程去向远端服务器去请求一个静态资源的路径 -->
+<h1 style="text-align: center">DNS查询工具</h1>
+<div style="text-align: center">
+    <form action="/parse" method="post">
+        查询DNS:  <input type="text" name="search_dns">
+        <input type="submit" name="sub" value="查询">
+    </form>
+</div>

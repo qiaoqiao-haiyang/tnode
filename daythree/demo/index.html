@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Conetent-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <input type="button" id="btn1" value="json"/>
+    <div class="div1">abc</div>
+    <img src="1.jpg">
+    <script src="jquery.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            // console.log(12345);
+            $.post("/data",{"name":"xiaoqiao"},function(data){
+                console.log(typeof(data));
+            },'json')
+        })
+    </script>
+
+</body>
+</html>

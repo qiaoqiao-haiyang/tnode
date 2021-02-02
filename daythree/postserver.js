@@ -6,6 +6,10 @@ var dns = require("dns")
 var util = require("util")
 
 http.createServer(function (req, res) {
+    // console.log(req.url);
+    // console.log(req.method);    //请求方式 http method  33种 get post put delete
+    // console.log(req.headers);
+
     var pathname = url.parse(req.url).pathname
     if (pathname == "/favicon.ico") {
         return;
@@ -34,19 +38,19 @@ function goPost(req, res) {
     var postData = "";
     req.setEncoding("utf8")
 
-    req.addListener("data",function(postDataChunk){
-        postData+=postDataChunk
+    req.addListener("data", function (postDataChunk) {
+        postData += postDataChunk
     });
-    req.addListener("end",function(){
+    req.addListener("end", function () {
         // console.log(postData);
         var param = querystring.parse(postData)
-        var dnsname=param.search_dns
-        dns.resolve4(dnsname,function(err,addresses){
-            if(err){
+        var dnsname = param.search_dns
+        dns.resolve4(dnsname, function (err, addresses) {
+            if (err) {
                 throw new Error()
-            }else{
+            } else {
                 // console.log(addresses);
-                res.writeHead(200,{"Content-type":"text/plain"})
+                res.writeHead(200, { "Content-type": "text/plain" })
                 res.end(util.inspect(addresses))
             }
         })
